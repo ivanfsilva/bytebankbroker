@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {Acoes} from './modelo/acoes';
-import {AcoesService} from './acoes.service';
+import { Acoes } from './modelo/acoes';
+import { AcoesService } from './acoes.service';
 
 @Component({
   selector: 'app-acoes',
@@ -15,8 +15,8 @@ export class AcoesComponent implements OnInit {
   constructor( private acoesService: AcoesService ) {}
 
   ngOnInit(): void {
-    this.acoesService.getAcoes().subscribe( (retornoApi) => {
-      this.acoes = retornoApi.payload;
+    this.acoesService.getAcoes().subscribe( (acoes) => {
+      this.acoes = acoes;
     });
   }
 }
